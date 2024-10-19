@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Feb 17 13:45:28 KST 2024
+https\://repo.maven.apache.org/maven2/.lastUpdated=1708145128939
+https\://nexus.basicit.co.kr/repository/maven-central/.error=Could not transfer artifact com.alibaba\:druid\:pom\:1.2.6 from/to maven.public (https\://nexus.basicit.co.kr/repository/maven-central/)\: status code\: 401, reason phrase\: Unauthorized (401)
+https\://nexus.basicit.co.kr/repository/maven-releases/.error=Could not transfer artifact com.alibaba\:druid\:pom\:1.2.6 from/to sync.release (https\://nexus.basicit.co.kr/repository/maven-releases/)\: status code\: 401, reason phrase\: Unauthorized (401)
+@default-maven.public-https\://nexus.basicit.co.kr/repository/maven-central/.lastUpdated=1708145128902
+@default-sync.release-https\://nexus.basicit.co.kr/repository/maven-releases/.lastUpdated=1708145128876

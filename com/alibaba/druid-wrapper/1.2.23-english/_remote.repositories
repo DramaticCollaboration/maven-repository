@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Oct 19 21:02:20 KST 2024
+druid-wrapper-1.2.23-english.pom>=
+druid-wrapper-1.2.23-english.jar>=
+druid-wrapper-1.2.23-english-sources.jar>=

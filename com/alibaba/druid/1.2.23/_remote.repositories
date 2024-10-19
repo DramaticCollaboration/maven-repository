@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Oct 19 20:42:06 KST 2024
+druid-1.2.23.jar>=
+druid-1.2.23-sources.jar>=
+druid-1.2.23.jar>aliyun=
+druid-1.2.23.pom>=
+druid-1.2.23.pom>aliyun=
