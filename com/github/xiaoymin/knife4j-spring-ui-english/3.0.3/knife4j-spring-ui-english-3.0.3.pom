@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>knife4j</artifactId>
+        <groupId>com.github.xiaoymin</groupId>
+        <version>3.0.3</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>knife4j-spring-ui-english</artifactId>
+    <name>knife4j-spring-ui</name>
+    <description>Swagger document ui module</description>
+
+    <properties>
+        <!--<destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>-->
+        <destDir>${project.build.outputDirectory}/META-INF/resources/</destDir>
+    </properties>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <targetPath>META-INF/resources/</targetPath>
+            </resource>
+            <resource>
+                <directory>${project.basedir}/../knife4j-vue/dist</directory>
+                <targetPath>META-INF/resources/</targetPath>
+            </resource>
+
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.3.2</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+
+    <repositories>
+        <repository>
+            <id>sync.snapshot</id>
+            <name>Sync Snapshot Repository</name>
+            <url>https://nexus.basicit.co.kr/repository/maven-snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>sync.release</id>
+            <name>Sync Release Repository</name>
+            <url>https://nexus.basicit.co.kr/repository/maven-releases/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+
+        <repository>
+            <id>maven.public</id>
+            <name>Maven Central Repository</name>
+            <url>https://nexus.basicit.co.kr/repository/maven-central/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+
+    <distributionManagement>
+        <repository>
+            <id>sync.release</id>
+            <name>Sync Release Repository</name>
+            <url>https://nexus.basicit.co.kr/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>sync.snapshot</id>
+            <name>Sync Snapshot Repository</name>
+            <url>https://nexus.basicit.co.kr/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>

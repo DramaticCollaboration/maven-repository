@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Oct 19 22:13:49 KST 2024
+https\://oss.sonatype.org/content/repositories/snapshots/.lastUpdated=1729343627747
+https\://repo.maven.apache.org/maven2/.lastUpdated=1729343629353
+https\://oss.sonatype.org/content/repositories/snapshots/.error=
+@default-spring-lib-https\://repo.spring.io/libs-release/.lastUpdated=1729343627959
+https\://repo.spring.io/libs-release/.error=Could not transfer artifact com.github.xiaoymin\:knife4j-openapi2-ui\:jar\:4.2.0 from/to spring-lib (https\://repo.spring.io/libs-release/)\: status code\: 401, reason phrase\:  (401)

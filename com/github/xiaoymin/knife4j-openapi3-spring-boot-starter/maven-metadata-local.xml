@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.github.xiaoymin</groupId>
+  <artifactId>knife4j-openapi3-spring-boot-starter</artifactId>
+  <versioning>
+    <release>4.4.0-english</release>
+    <versions>
+      <version>4.4.0-english</version>
+    </versions>
+    <lastUpdated>20241019140217</lastUpdated>
+  </versioning>
+</metadata>

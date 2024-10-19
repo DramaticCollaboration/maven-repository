@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>knife4j</artifactId>
+        <groupId>com.github.xiaoymin</groupId>
+        <version>3.0.3</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>knife4j-vue-english</artifactId>
+    <name>knife4j-vue-english</name>
+    <description>Swagger document ui module</description>
+
+   <properties>
+     <frontend-maven-plugin.version>1.12.1</frontend-maven-plugin.version>
+
+     <node.version>v16.20.2</node.version>
+     <yarn.version>v1.22.19</yarn.version>
+   </properties>
+
+
+
+    <repositories>
+        <repository>
+            <id>sync.snapshot</id>
+            <name>Sync Snapshot Repository</name>
+            <url>https://nexus.basicit.co.kr/repository/maven-snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>sync.release</id>
+            <name>Sync Release Repository</name>
+            <url>https://nexus.basicit.co.kr/repository/maven-releases/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+
+        <repository>
+            <id>maven.public</id>
+            <name>Maven Central Repository</name>
+            <url>https://nexus.basicit.co.kr/repository/maven-central/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+
+    <distributionManagement>
+        <repository>
+            <id>sync.release</id>
+            <name>Sync Release Repository</name>
+            <url>https://nexus.basicit.co.kr/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>sync.snapshot</id>
+            <name>Sync Snapshot Repository</name>
+            <url>https://nexus.basicit.co.kr/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.3.2</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <version>${frontend-maven-plugin.version}</version>
+                <executions>
+                    <!-- Install our node and npm version to run npm/node scripts-->
+                    <execution>
+                        <id>install node and yarn</id>
+                        <goals>
+                          <goal>install-node-and-yarn</goal>
+                        </goals>
+                        <configuration>
+                          <nodeVersion>${node.version}</nodeVersion>
+                          <yarnVersion>${yarn.version}</yarnVersion>
+                        </configuration>
+                    </execution>
+                    <!-- Install all project dependencies -->
+                    <execution>
+                        <id>yarn install</id>
+                        <goals>
+                            <goal>yarn</goal>
+                        </goals>
+                        <!-- optional: default phase is "generate-resources" -->
+                        <phase>generate-resources</phase>
+                        <!-- Optional configuration which provides for running any npm command -->
+                        <configuration>
+                            <arguments>install</arguments>
+                        </configuration>
+                    </execution>
+                    <!-- Build and minify static files -->
+                    <execution>
+                        <id>yarn run build</id>
+                        <goals>
+                            <goal>yarn</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>run build</arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
